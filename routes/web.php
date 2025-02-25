@@ -28,6 +28,10 @@ Route::get('/shop', [ProductController::class, 'index'])->middleware('auth');
 
 Auth::routes();
 
+Route::get('/', function () {
+    return redirect('/home');
+});
+
 Route::get('/home', [HomeController::class, 'index'])->middleware('auth');
 
 Route::middleware(['auth'])->group(function(){

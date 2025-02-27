@@ -32,7 +32,7 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-Route::get('/home', [HomeController::class, 'index'])->middleware('auth');
+Route::get('/home', [HomeController::class, 'index']);
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/basket', [BasketController::class, 'index'])->name('cart.index');

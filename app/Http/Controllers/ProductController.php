@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,6 +13,7 @@ class ProductController extends Controller
         $products = Product::whereHas('user', function ($query) {
             $query->where('is_admin', true);
         })->get();
+        $cartCount = Cart::where('user_id', Auth::id())->sum('quantity');
         return view('products.index', compact('products'));
     }
 

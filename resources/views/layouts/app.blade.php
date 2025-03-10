@@ -22,7 +22,7 @@
                     <a class="nav-link active" aria-current="page" href="/shop" style="color: #357266 ;">Shop</a>
                     <a class="nav-link" href="#" style="color: #357266 ;">Who we are</a>
                     <a class="nav-link" href="#" style="color: #357266 ;">My Profile</a>
-                    <a class="nav-link" href="/basket" style="color: #357266 ;">Basket</a>
+                    <a class="nav-link" href="/basket" style="color: #357266 ;">Basket <span id="cart-count">{{ $cartCount ?? 0 }}</span></a>
                     <a class="nav-link" href="/orders"style="color: #357266 ;">My orders</a>
                     @auth
                     <div class="card-body">
@@ -40,6 +40,12 @@
                     </form>
                     @endauth
                 </div>
+                <!-- <div class="navbar-nav ms-auto">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        
+                    </div>
+                </div> -->
             </div>
         </div>
     </nav>

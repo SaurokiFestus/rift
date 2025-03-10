@@ -23,7 +23,7 @@ use App\Http\Controllers\Admin\AdminController;
 //     return view('layouts.app');
 // });
 
-Route::get('/shop', [ProductController::class, 'index'])->middleware('auth');
+Route::get('/shop', [ProductController::class, 'index']);
 
 
 Auth::routes();

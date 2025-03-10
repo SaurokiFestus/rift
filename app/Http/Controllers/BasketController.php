@@ -32,8 +32,9 @@ class BasketController extends Controller
                 'quantity' => (int)$request->quantity,
             ]);
         }
+        $cartCount = Cart::where('user_id', Auth::id())->sum('quantity');
 
-        return redirect()->route('cart.index')->with('success', 'Product added to cart!');
+        return response()->json(['success' => 'Product added to cart!', 'cartCount' => $cartCount]);
     }
 
     public function updateCart(Request $request, $id){

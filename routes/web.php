@@ -40,7 +40,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/basket/update/{id}', [BasketController::class, 'updateCart'])->name('cart.update');
 });
 
-Route::post('/checkout', [BasketController::class, 'checkout'])->name('cart.checkout');
+// Route::post('/checkout', [BasketController::class, 'checkout'])->name('cart.checkout');
 
 //Admin routes
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function(){
